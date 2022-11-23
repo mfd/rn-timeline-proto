@@ -1,0 +1,85 @@
+{% extends "templates/base.html" %}
+
+{% set page = base %}
+{% block main %}
+{% for key, section in page %}
+<div class="page">
+  <div class="wrapper__content">
+    <section class="rich-text">
+      <div class="page-container"><p data-block-key="df72m">Более 20 лет успешной работы в&nbsp;качестве одного из&nbsp;ведущих институтов нефтегазовой отрасли, генеральное проектирование для предприятий «Роснефти», накопленный богатый практический и&nbsp;научный потенциал позволили СамараНИПИнефти стать базовым предприятием нефтехимического кластера Самарской области.</p>
+      </div>
+    </section>
+    <section class="history">
+      <div class="wrapper container history__content">
+        <div class="history__head-wrapper">
+          <h2 class="history__heading heading">История</h2>
+        </div>
+
+        <div class="odometer history__years" data-init-num="{{section.timeline[0].year}}">{{section.timeline[0].year}}</div>
+
+        <div class="history__slider">
+          <div class="knpk-history" data-gal="" data-history="history">
+            <div class="knpk-history__main" data-gal-main="">
+              <div class="swiper-wrapper knpk-history__main-wrap">
+                {% for key, item in section.timeline %}
+                  <div class="swiper-slide knpk-history__main-slide">
+                    <div class="flex-row flex-row_ai-center knpk-history__row">
+                      <div class="flex-col">
+                        <div class="knpk-history__body">
+                          <div class="knpk-history__content {% if item.pics|length > 0 %}knpk-history__content--nopics{% endif %}">
+														{% if item.pics|length > 0 %}
+                            <div class="photo-tmb">
+                              <div class="photo-thumb__picture-outer">
+                              {% for key, item in item.pics %}
+                                <img src="{{ item }}" class="photo-thumb__picture"/>
+                              {% endfor %}
+                              </div>
+                            </div>
+														{% endif %}
+                            <h3 class="knpk-history__title">{{ item.title }}</h3>
+                            <p class="knpk-history__subtitle">{{ item.subtitle }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- <div class="knpk-history__prev" data-gal-prev="">
+              <svg class="knpk-history__prev-icon">
+                <use xlink:href="#icon-arrow"></use>
+              </svg>
+            </div>
+
+            <div class="knpk-history__next knpk-history__next" data-gal-next="">
+              <svg class="knpk-history__next-icon">
+                <use xlink:href="#icon-arrow"></use>
+              </svg>
+            </div> -->
+
+            <div class="knpk-history__thumbs" data-gal-thumb="">
+              <div class="swiper-wrapper knpk-history__thumbs-wrap">
+                {% for key, item in section.timeline %}
+                <div class="swiper-slide knpk-history__thumbs-slide" data-gal-thumb-slide="">
+                  <div class="knpk-history__item">
+                    <div class="knpk-history__year">{{ item.year }}</div>
+                    <div class="knpk-history__dot"></div>
+                  </div>
+                </div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rich-text">
+      <div class="page-container"><p data-block-key="df72m">Более 20 лет успешной работы в&nbsp;качестве одного из&nbsp;ведущих институтов нефтегазовой отрасли, генеральное проектирование для предприятий «Роснефти», накопленный богатый практический и&nbsp;научный потенциал позволили СамараНИПИнефти стать базовым предприятием нефтехимического кластера Самарской области.</p><p data-block-key="bn0tr">Сегодня в&nbsp;институте продолжается динамичное развитие инфраструктуры, формирование высококвалифицированной команды сотрудников, нацеленной на&nbsp;разработку лучших научных и&nbsp;проектных решений для стабильного роста добычи нефти и&nbsp;газа на&nbsp;предприятиях компании «Роснефть».</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock %}

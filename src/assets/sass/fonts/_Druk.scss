@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "DrukTextWide";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("@/assets/fonts/DrukTextWide/DrukTextWide-Medium.woff") format("woff"),
+    url("@/assets/fonts/DrukTextWide/DrukTextWide-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DrukTextWide";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("@/assets/fonts/DrukTextWide/DrukTextWide-Bold.woff") format("woff"),
+    url("@/assets/fonts/DrukTextWide/DrukTextWide-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DrukTextWide";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("@/assets/fonts/DrukTextWide/DrukTextWide-Heavy.woff") format("woff"),
+    url("@/assets/fonts/DrukTextWide/DrukTextWide-Heavy.ttf") format("truetype");
+}

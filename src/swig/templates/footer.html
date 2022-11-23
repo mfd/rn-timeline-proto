@@ -1,0 +1,46 @@
+<footer id="footer" class="bg-dark">
+    {% for footer in footer %}
+    <a data-scroll href="#top" class="btn btn-top btn-rn-yellow btn-ico btn-lg btn-rounded"><i
+      class="icon-arrow-up2 fs-22"></i></a>
+    <div class="container">
+      <div class="row gutter-3">
+        <div class="col-12 col-md-2 col-lg-1">
+          <a href="/"><img src="//rn.digital/static/img/rn_logo.svg" width="60" alt="Logo"></a>
+        </div>
+        <div class="col-12 col-md-7 col-lg-8 text-white">
+            {{ footer.title }}
+          <p>Copyright © 2017-2022<br>
+            Правообладатель: <a href="https://www.rosneft.ru" class="text-nowrap"
+                                              style="text-decoration: underline;">ПАО «НК «Роснефть»</a>
+            <br/>
+            Разработчик: <span class="text-nowrap">ООО «РН-БашНИПИнефть»</span></p>
+          <div class="row">
+            <div class="col">
+              <ul class="list-group list-group-minimal">
+                <li class="list-group-item"><i class="icon-mail mr-1"></i><a href="mailto:soft@bnipi.rosneft.ru"
+                                                                             class="link">soft@bnipi.rosneft.ru</a></li>
+                <li class="list-group-item"><i class="icon-phone-call mr-1"></i><a href="tel:83472922492"
+                                                                                   class="link">+7 (347) 292 24 92</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 col-lg-3">
+          <div class="dropdown">
+            <button class="btn btn-inverted btn-block dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Русский
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/courses/">Русский</a>
+                <a class="dropdown-item" href="/en/courses/">English</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </footer>
+
+  

@@ -1,0 +1,15 @@
+AddType "text/html; charset=utf-8" .html .htm
+AddDefaultCharset utf-8
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# AddType "text/html; charset=windows-1251" .html .htm
+# AddDefaultCharset windows-1251
+# AddType application/x-httpd-php .php .htm .html
+# php_value default_charset windows-1251

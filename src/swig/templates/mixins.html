@@ -1,0 +1,25 @@
+{% macro input(name, value, type = "text", size = 20) %}
+    <input type="{{ type }}" name="{{ name }}" value="{{ value|e }}" size="{{ size }}"/>
+{% endmacro %}
+
+{% macro svg(icon_name, class_name) %}
+  <svg class="svg-sprite-item {{ class_name }}" role="img">
+    <use xlink:href="/img/sprite.svg#{{ icon_name }}"></use>
+  </svg>
+{% endmacro %}
+
+{% macro quote(title, subtitle, photo, text) %}
+<div class="b-quote alert alert-warning a-fadeup" role="alert">
+  <!-- <i class="icon-alert-circle"></i> -->
+  <div class="b-quote__author">
+    {% if photo|length > 0 %}
+      <figure class="b-quote__photo"><img src="{{ photo }}" class="img-responsive circle" alt="{{ title }}" /></figure>
+    {% endif %}
+    <div class="b-quote__name">
+      <h4 class="b-quote__title">{{ title }}</h4>
+      <h5 class="b-quote__subtitle">{{ subtitle|raw }}</h5>
+    </div>
+  </div>
+  <p class="b-quote__text">{{ text|raw }}</p>
+</div>
+{% endmacro %}

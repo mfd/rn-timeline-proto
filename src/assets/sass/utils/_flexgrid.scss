@@ -1,0 +1,52 @@
+@use "sass:math";
+$grid-cols: 24 !default;
+$grid-gutter: 35px;
+$grid-gutter-sm: 30px;
+$grid-gutter-xs: 20px;
+$flex-row-class: 'flex-row';
+$flex-col-name: 'flex-col';
+
+$grid-breakpoints: (
+    sm 768px,
+    md 992px,
+    lg 1200px
+);
+
+.#{$flex-row-class} {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: calc($grid-gutter/-2);
+    margin-left: calc($grid-gutter/-2);
+}
+
+$flex-col-type: xs;
+.#{$flex-col-name} {
+    //flex: 1 1 auto;
+    //flex: auto;
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-right: calc($grid-gutter/2);
+    padding-left: calc($grid-gutter/2);
+    min-width: 0;
+}
+@for $i from 1 through $grid-cols {
+    .#{$flex-col-type}-#{$i} {
+        flex-basis: calc(100% / $grid-cols * $i);
+        max-width: calc(100% / $grid-cols * $i);
+    }
+}
+
+@each $breakpoint in $grid-breakpoints {
+    $flex-col-type: nth($breakpoint, 1);
+    $col-size: nth($breakpoint, 2);
+    @media (min-width: $col-size) {
+        @for $i from 1 through $grid-cols {
+            .#{$flex-col-type}-#{$i} {
+                flex-basis: calc(100% / $grid-cols * $i);
+                max-width:calc( 100% / $grid-cols * $i);
+            }
+        }
+    }
+}
